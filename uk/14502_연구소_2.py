@@ -5,16 +5,16 @@ global start
 global answer
 answer=[]
 
-def comb(idx,cnt,list,end):# 조합
+def combination(idx,cnt,list,end):# 조합
     global answer
     if cnt == 3:
         answer.append(list)
         return
     for i in range(idx,end):
-        comb(i+1,cnt+1,list+[i],end)
+        combination(i+1,cnt+1,list+[i],end)
 
 
-def solv(map):
+def solve(map):
     virus = []
     coll= []
     global answer
@@ -28,7 +28,7 @@ def solv(map):
             if map[i][j]==2:
                 virus.append([i,j])
 
-    comb(0,0,[],len(coll))#Find Combination
+    combination(0,0,[],len(coll))#Find Combination
 
 
     max_val=0
@@ -79,4 +79,4 @@ if __name__=="__main__":
     n,m= map(int,input().split())
 
     mp= [list(map(int,input().split())) for _ in range(n)]
-    solv(mp)
+    solve(mp)
