@@ -1,5 +1,3 @@
-from bisect import bisect_left, bisect_right
-
 class Solution:
     def threeSumClosest(self, nums: List[int], target: int) -> int:
         # optimization
